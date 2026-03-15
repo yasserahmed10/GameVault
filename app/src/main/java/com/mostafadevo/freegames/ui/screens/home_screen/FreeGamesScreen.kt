@@ -44,10 +44,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.mostafadevo.freegames.R
 import com.mostafadevo.freegames.ui.components.FilterIcon
 import com.mostafadevo.freegames.ui.components.FreeGameListItem
 import com.mostafadevo.freegames.ui.components.ShimmeringText
@@ -99,7 +101,7 @@ fun FreeGamesScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     ShimmeringText(
-                        text = "Loading...",
+                        text = stringResource(R.string.loading),
                         shimmerColor = MaterialTheme.colorScheme.primary
                     )
                 }
@@ -121,24 +123,62 @@ fun FreeGamesScreen(
             )
             if (showBottomSheet) {
                 val sortByOptions = listOf(
-                    "release-date",
-                    "popularity",
-                    "alphabetical ",
-                    "relevance"
+                    stringResource(R.string.free_games_sort_release_date),
+                    stringResource(R.string.free_games_sort_popularity),
+                    stringResource(R.string.free_games_sort_alphabetical),
+                    stringResource(R.string.free_games_sort_relevance)
                 )
                 val platformOptions = listOf(
-                    "pc",
-                    "browser",
-                    "all"
+                    stringResource(R.string.free_games_platform_pc),
+                    stringResource(R.string.free_games_platform_browser),
+                    stringResource(R.string.free_games_platform_all)
                 )
                 val gameGenres = listOf(
-                    "mmorpg", "shooter", "strategy", "moba", "racing", "sports", "social",
-                    "sandbox", "open-world", "survival", "pvp", "pve", "pixel", "voxel",
-                    "zombie", "turn-based", "first-person", "third-person", "top-down", "tank",
-                    "space", "sailing", "side-scroller", "superhero", "permadeath", "card",
-                    "battle-royale", "mmo", "mmofps", "mmotps", "3d", "2d", "anime", "fantasy",
-                    "sci-fi", "fighting", "action-rpg", "action", "military", "martial-arts",
-                    "flight", "low-spec", "tower-defense", "horror", "mmorts"
+                    stringResource(R.string.genre_mmorpg),
+                    stringResource(R.string.genre_shooter),
+                    stringResource(R.string.genre_strategy),
+                    stringResource(R.string.genre_moba),
+                    stringResource(R.string.genre_racing),
+                    stringResource(R.string.genre_sports),
+                    stringResource(R.string.genre_social),
+                    stringResource(R.string.genre_sandbox),
+                    stringResource(R.string.genre_open_world),
+                    stringResource(R.string.genre_survival),
+                    stringResource(R.string.genre_pvp),
+                    stringResource(R.string.genre_pve),
+                    stringResource(R.string.genre_pixel),
+                    stringResource(R.string.genre_voxel),
+                    stringResource(R.string.genre_zombie),
+                    stringResource(R.string.genre_turn_based),
+                    stringResource(R.string.genre_first_person),
+                    stringResource(R.string.genre_third_person),
+                    stringResource(R.string.genre_top_down),
+                    stringResource(R.string.genre_tank),
+                    stringResource(R.string.genre_space),
+                    stringResource(R.string.genre_sailing),
+                    stringResource(R.string.genre_side_scroller),
+                    stringResource(R.string.genre_superhero),
+                    stringResource(R.string.genre_permadeath),
+                    stringResource(R.string.genre_card),
+                    stringResource(R.string.genre_battle_royale),
+                    stringResource(R.string.genre_mmo),
+                    stringResource(R.string.genre_mmofps),
+                    stringResource(R.string.genre_mmotps),
+                    stringResource(R.string.genre_3d),
+                    stringResource(R.string.genre_2d),
+                    stringResource(R.string.genre_anime),
+                    stringResource(R.string.genre_fantasy),
+                    stringResource(R.string.genre_sci_fi),
+                    stringResource(R.string.genre_fighting),
+                    stringResource(R.string.genre_action_rpg),
+                    stringResource(R.string.genre_action),
+                    stringResource(R.string.genre_military),
+                    stringResource(R.string.genre_martial_arts),
+                    stringResource(R.string.genre_flight),
+                    stringResource(R.string.genre_low_spec),
+                    stringResource(R.string.genre_tower_defense),
+                    stringResource(R.string.genre_horror),
+                    stringResource(R.string.genre_mmorts)
                 )
 
                 ModalBottomSheet(
@@ -150,7 +190,7 @@ fun FreeGamesScreen(
                 ) {
                     // Sheet content
                     Text(
-                        text = "Filtering options",
+                        text = stringResource(R.string.filtering_options),
                         style = MaterialTheme.typography.titleLarge,
                         fontSize = 16.sp,
                         modifier = Modifier
@@ -162,7 +202,7 @@ fun FreeGamesScreen(
                     )
                     // sort by section
                     Text(
-                        text = "Sort by: ",
+                        text = stringResource(R.string.sort_by),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -210,7 +250,7 @@ fun FreeGamesScreen(
                     )
                     // platform section
                     Text(
-                        text = "Platform: ",
+                        text = stringResource(R.string.free_games_filter_platform),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -273,13 +313,13 @@ fun FreeGamesScreen(
                                         expanded = expanded
                                     )
                                 },
-                                value = state.category?.capitalize(Locale.ROOT)?.replace("-", " ") ?: "Select Category",
+                                value = state.category?.capitalize(Locale.ROOT)?.replace("-", " ") ?: stringResource(R.string.select_category),
                                 onValueChange = {},
                                 readOnly = true,
                                 singleLine = true,
                                 label = {
                                     if (state.category != null) {
-                                        Text("Category")
+                                        Text(stringResource(R.string.category_label))
                                     }
                                 },
                                 colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors()
@@ -339,7 +379,7 @@ fun FreeGamesScreen(
                             modifier = Modifier.padding(8.dp)
                         )
                         Text(
-                            text = "Search With Applied Filters",
+                            text = stringResource(R.string.search_with_filters),
                             style = MaterialTheme.typography.titleSmall,
                             fontSize = 14.sp
                         )
