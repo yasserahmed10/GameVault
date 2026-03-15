@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Game Vault</string>
+
+    <!-- Deals Screen -->
+    <string name="deals_tab">العروض 🥝</string>
+    <string name="giveaways_tab">الجوائز 🎉</string>
+    <string name="search_for_deals">البحث عن العروض</string>
+    <string name="search_results">عثرنا على %d نتائج بحث!</string>
+    <string name="recent_searches">الأبحاث الأخيرة</string>
+    <string name="loading_deals">جاري تحميل العروض</string>
+    <string name="loading_giveaways">جاري تحميل الجوائز</string>
+
+    <!-- Filtering Options -->
+    <string name="filtering_options">خيارات التصفية</string>
+    <string name="sort_by">ترتيب حسب: </string>
+    <string name="descending">تنازلي</string>
+    <string name="store">المتجر: </string>
+    <string name="price">السعر: </string>
+    <string name="on_sale_games">الألعاب في العرض:</string>
+    <string name="apply_filters">تطبيق المرشحات</string>
+    <string name="type">النوع: </string>
+    <string name="platform">المنصة: </string>
+
+    <!-- Sort Options -->
+    <string name="sort_deal_rating">تقييم العرض</string>
+    <string name="sort_title">العنوان</string>
+    <string name="sort_savings">المدخرات</string>
+    <string name="sort_price">السعر</string>
+    <string name="sort_metacritic">ميتاكريتيك</string>
+    <string name="sort_reviews">المراجعات</string>
+    <string name="sort_release">تاريخ الإصدار</string>
+    <string name="sort_store">المتجر</string>
+    <string name="sort_recent">الأحدث</string>
+
+    <!-- Stores -->
+    <string name="store_steam">Steam</string>
+    <string name="store_gamersgate">GamersGate</string>
+    <string name="store_greenmangaming">GreenManGaming</string>
+    <string name="store_amazon">Amazon</string>
+    <string name="store_gamestop">GameStop</string>
+    <string name="store_direct2drive">Direct2Drive</string>
+    <string name="store_gog">GOG</string>
+    <string name="store_origin">Origin</string>
+    <string name="store_get_games">Get Games</string>
+    <string name="store_shiny_loot">Shiny Loot</string>
+    <string name="store_humble">متجر Humble</string>
+    <string name="store_desura">Desura</string>
+    <string name="store_uplay">Uplay</string>
+    <string name="store_indie_gamestand">IndieGameStand</string>
+    <string name="store_fanatical">Fanatical</string>
+    <string name="store_gamesrocket">Gamesrocket</string>
+    <string name="store_games_republic">Games Republic</string>
+    <string name="store_sila_games">SilaGames</string>
+    <string name="store_playfield">Playfield</string>
+    <string name="store_imperial_games">ImperialGames</string>
+    <string name="store_wingamestore">WinGameStore</string>
+    <string name="store_funstockdigital">FunStockDigital</string>
+    <string name="store_gamebillet">GameBillet</string>
+    <string name="store_voidu">Voidu</string>
+    <string name="store_epic_games">متجر Epic Games</string>
+    <string name="store_razer">متجر Razer للألعاب</string>
+    <string name="store_gamesplanet">Gamesplanet</string>
+    <string name="store_gamesload">Gamesload</string>
+    <string name="store_2game">2Game</string>
+    <string name="store_indiegal">IndieGala</string>
+    <string name="store_blizzard">متجر Blizzard</string>
+    <string name="store_allyouplay">AllYouPlay</string>
+    <string name="store_dlgamer">DLGamer</string>
+    <string name="store_noctre">Noctre</string>
+    <string name="store_dreamgame">DreamGame</string>
+
+    <!-- Giveaways Sort Options -->
+    <string name="sort_date">التاريخ</string>
+    <string name="sort_value">القيمة</string>
+    <string name="sort_popularity">الشهرة</string>
+
+    <!-- Giveaways Type -->
+    <string name="type_game">لعبة</string>
+    <string name="type_loot">غنيمة</string>
+    <string name="type_beta">نسخة تجريبية</string>
+
+    <!-- Platforms -->
+    <string name="platform_pc">PC</string>
+    <string name="platform_steam">Steam</string>
+    <string name="platform_epic">Epic Games Store</string>
+    <string name="platform_ubisoft">Ubisoft</string>
+    <string name="platform_gog">GOG</string>
+    <string name="platform_itchio">itch.io</string>
+    <string name="platform_ps4">PS4</string>
+    <string name="platform_ps5">PS5</string>
+    <string name="platform_xbox_one">Xbox One</string>
+    <string name="platform_xbox_series">Xbox Series X/S</string>
+    <string name="platform_switch">Nintendo Switch</string>
+    <string name="platform_android">Android</string>
+    <string name="platform_ios">iOS</string>
+    <string name="platform_vr">الواقع الافتراضي</string>
+    <string name="platform_battlenet">Battle.net</string>
+    <string name="platform_origin">Origin</string>
+    <string name="platform_drm_free">بدون DRM</string>
+    <string name="platform_xbox_360">Xbox 360</string>
+
+    <!-- Content Descriptions -->
+    <string name="icon_favorite">المفضلة</string>
+    <string name="icon_close">إغلاق</string>
+    <string name="icon_done">أيقونة تم</string>
+    <string name="icon_history">السجل</string>
+    <string name="icon_read_more">اقرأ المزيد</string>
+    <string name="price_range_format">%.2f .. %.2f</string>
+
+    <!-- Game Details Screen -->
+    <string name="get_game">احصل عليها</string>
+    <string name="minimum_system_requirements">متطلبات النظام الدنيا:</string>
+    <string name="about_the_game">حول اللعبة:</string>
+    <string name="platform_label">المنصة:</string>
+    <string name="genre_label">النوع:</string>
+    <string name="developer_label">المطور:</string>
+    <string name="release_date_label">تاريخ الإصدار:</string>
+    <string name="screenshots_label">لقطات الشاشة:</string>
+    <string name="os_label">نظام التشغيل:</string>
+    <string name="processor_label">المعالج:</string>
+    <string name="memory_label">الذاكرة:</string>
+    <string name="graphics_label">بطاقة الرسوميات:</string>
+    <string name="storage_label">التخزين:</string>
+
+    <!-- Free Games Screen -->
+    <string name="loading">جاري التحميل...</string>
+    <string name="search_with_filters">البحث مع تطبيق المرشحات</string>
+    <string name="category_label">الفئة</string>
+    <string name="select_category">اختر فئة</string>
+    <string name="free_games_filter_platform">المنصة: </string>
+
+    <!-- Free Games Sort Options -->
+    <string name="free_games_sort_release_date">تاريخ الإصدار</string>
+    <string name="free_games_sort_popularity">الشهرة</string>
+    <string name="free_games_sort_alphabetical">أبجدي</string>
+    <string name="free_games_sort_relevance">ملاءمة</string>
+
+    <!-- Free Games Platform Options -->
+    <string name="free_games_platform_pc">PC</string>
+    <string name="free_games_platform_browser">متصفح</string>
+    <string name="free_games_platform_all">الجميع</string>
+
+    <!-- Game Genres -->
+    <string name="genre_mmorpg">MMORPG</string>
+    <string name="genre_shooter">لعبة إطلاق نار</string>
+    <string name="genre_strategy">استراتيجية</string>
+    <string name="genre_moba">MOBA</string>
+    <string name="genre_racing">سباق</string>
+    <string name="genre_sports">رياضة</string>
+    <string name="genre_social">اجتماعية</string>
+    <string name="genre_sandbox">رمل</string>
+    <string name="genre_open_world">عالم مفتوح</string>
+    <string name="genre_survival">بقاء</string>
+    <string name="genre_pvp">PvP</string>
+    <string name="genre_pve">PvE</string>
+    <string name="genre_pixel">بكسل</string>
+    <string name="genre_voxel">فوكسل</string>
+    <string name="genre_zombie">زومبي</string>
+    <string name="genre_turn_based">قائم على الأدوار</string>
+    <string name="genre_first_person">من منظور الشخص الأول</string>
+    <string name="genre_third_person">من منظور الشخص الثالث</string>
+    <string name="genre_top_down">من الأعلى للأسفل</string>
+    <string name="genre_tank">دبابة</string>
+    <string name="genre_space">الفضاء</string>
+    <string name="genre_sailing">إبحار</string>
+    <string name="genre_side_scroller">تمرير جانبي</string>
+    <string name="genre_superhero">بطل خارق</string>
+    <string name="genre_permadeath">الموت الدائم</string>
+    <string name="genre_card">بطاقات</string>
+    <string name="genre_battle_royale">معركة ملكية</string>
+    <string name="genre_mmo">MMO</string>
+    <string name="genre_mmofps">MMOFPS</string>
+    <string name="genre_mmotps">MMOTPS</string>
+    <string name="genre_3d">ثلاثي الأبعاد</string>
+    <string name="genre_2d">ثنائي الأبعاد</string>
+    <string name="genre_anime">أنمي</string>
+    <string name="genre_fantasy">خيال</string>
+    <string name="genre_sci_fi">علمي خيالي</string>
+    <string name="genre_fighting">قتالية</string>
+    <string name="genre_action_rpg">لعبة أكشن RPG</string>
+    <string name="genre_action">أكشن</string>
+    <string name="genre_military">عسكرية</string>
+    <string name="genre_martial_arts">فنون قتالية</string>
+    <string name="genre_flight">طيران</string>
+    <string name="genre_low_spec">مواصفات منخفضة</string>
+    <string name="genre_tower_defense">دفاع البرج</string>
+    <string name="genre_horror">رعب</string>
+    <string name="genre_mmorts">MMORTS</string>
+
+    <!-- Settings Screen -->
+    <string name="app_settings">إعدادات التطبيق</string>
+    <string name="theme_label">المظهر :</string>
+    <string name="theme_light">فاتح ☀️</string>
+    <string name="theme_dark">داكن 🌘</string>
+    <string name="theme_system">النظام 🤖</string>
+    <string name="dynamic_colors_label">الألوان الديناميكية</string>
+    <string name="clear_search_history_label">مسح سجل البحث 🧹</string>
+    <string name="clear_button">مسح</string>
+    <string name="search_history_limit_label">حد سجل البحث :</string>
+    <string name="decrease_button">−</string>
+    <string name="increase_button">+</string>
+
+    <!-- Navigation -->
+    <string name="nav_free_games">ألعاب مجانية</string>
+    <string name="nav_deals">عروض</string>
+    <string name="nav_settings">الإعدادات</string>
+</resources>

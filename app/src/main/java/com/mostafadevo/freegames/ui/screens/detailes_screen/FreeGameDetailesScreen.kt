@@ -57,11 +57,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.palette.graphics.Palette
 import coil.compose.AsyncImage
+import com.mostafadevo.freegames.R
 import com.mostafadevo.freegames.ui.components.BlurredBox
 import com.mostafadevo.freegames.utils.extractDominantColor
 import com.mostafadevo.freegames.utils.getContrastingTextColor
@@ -190,7 +192,7 @@ fun FreeGameDetailesScreen(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = "Get",
+                                text = stringResource(R.string.get_game),
                                 color = animtedTextColor,
                                 style = MaterialTheme.typography.labelLarge,
                                 modifier = Modifier.padding(8.dp)
@@ -201,7 +203,7 @@ fun FreeGameDetailesScreen(
                     // minimum requirements
                     Row {
                         Text(
-                            text = "Minimum System Reuirements:",
+                            text = stringResource(R.string.minimum_system_requirements),
                             color = animtedTextColor,
                             style = MaterialTheme.typography.headlineSmall,
                             modifier = Modifier
@@ -215,7 +217,7 @@ fun FreeGameDetailesScreen(
                         }) {
                             Icon(
                                 imageVector = if (isRequirementsEnabled.value.not()) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
-                                contentDescription = "Read more"
+                                contentDescription = stringResource(R.string.icon_read_more)
                             )
                         }
                     }
@@ -225,11 +227,11 @@ fun FreeGameDetailesScreen(
                         exit = shrinkVertically()
                     ) {
                         Text(
-                            text = "os :${state.game.minimumSystemRequirements.os}\n" +
-                                "processor :${state.game.minimumSystemRequirements.processor}\n" +
-                                "memory :${state.game.minimumSystemRequirements.memory}\n" +
-                                "graphics :${state.game.minimumSystemRequirements.graphics}\n" +
-                                "storage :${state.game.minimumSystemRequirements.storage}",
+                            text = stringResource(R.string.os_label) + " ${state.game.minimumSystemRequirements.os}\n" +
+                                stringResource(R.string.processor_label) + " ${state.game.minimumSystemRequirements.processor}\n" +
+                                stringResource(R.string.memory_label) + " ${state.game.minimumSystemRequirements.memory}\n" +
+                                stringResource(R.string.graphics_label) + " ${state.game.minimumSystemRequirements.graphics}\n" +
+                                stringResource(R.string.storage_label) + " ${state.game.minimumSystemRequirements.storage}",
                             style = MaterialTheme.typography.labelSmall,
                             modifier = Modifier.padding(8.dp),
                             color = animtedTextColor
@@ -239,7 +241,7 @@ fun FreeGameDetailesScreen(
                     // about the game
                     Row {
                         Text(
-                            text = "About the game:",
+                            text = stringResource(R.string.about_the_game),
                             style = MaterialTheme.typography.headlineSmall,
                             modifier = Modifier
                                 .padding(8.dp)
@@ -253,7 +255,7 @@ fun FreeGameDetailesScreen(
                         }) {
                             Icon(
                                 imageVector = if (isReadMoreEnabled.value.not()) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
-                                contentDescription = "Read more"
+                                contentDescription = stringResource(R.string.icon_read_more)
                             )
                         }
                     }
@@ -291,7 +293,7 @@ fun FreeGameDetailesScreen(
                             modifier = Modifier.weight(1f).clip(RoundedCornerShape(8.dp))
                         ) {
                             Text(
-                                text = "Platform: \n${state.game.platform}",
+                                text = stringResource(R.string.platform_label) + "\n${state.game.platform}",
                                 color = animtedTextColor,
                                 style = MaterialTheme.typography.labelSmall,
                                 modifier = Modifier.padding(8.dp)
@@ -302,7 +304,7 @@ fun FreeGameDetailesScreen(
                             modifier = Modifier.weight(1f).clip(RoundedCornerShape(8.dp))
                         ) {
                             Text(
-                                text = "Genre: \n${state.game.genre}",
+                                text = stringResource(R.string.genre_label) + "\n${state.game.genre}",
                                 color = animtedTextColor,
                                 style = MaterialTheme.typography.labelSmall,
                                 modifier = Modifier.padding(8.dp)
@@ -320,7 +322,7 @@ fun FreeGameDetailesScreen(
                             modifier = Modifier.weight(1f).clip(RoundedCornerShape(8.dp))
                         ) {
                             Text(
-                                text = "Developer: \n${state.game.developer}",
+                                text = stringResource(R.string.developer_label) + "\n${state.game.developer}",
                                 style = MaterialTheme.typography.labelSmall,
                                 color = animtedTextColor,
                                 maxLines = 2,
@@ -341,7 +343,7 @@ fun FreeGameDetailesScreen(
                             modifier = Modifier.weight(1f).clip(RoundedCornerShape(8.dp))
                         ) {
                             Text(
-                                text = "ReleaseDate: \n${state.game.releaseDate}",
+                                text = stringResource(R.string.release_date_label) + "\n${state.game.releaseDate}",
                                 color = animtedTextColor,
                                 style = MaterialTheme.typography.labelSmall,
                                 modifier = Modifier.padding(8.dp)
@@ -351,7 +353,7 @@ fun FreeGameDetailesScreen(
 
                     // screenshots
                     Text(
-                        text = "Screenshots:",
+                        text = stringResource(R.string.screenshots_label),
                         color = animtedTextColor,
                         style = MaterialTheme.typography.headlineSmall,
                         modifier = Modifier

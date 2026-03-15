@@ -1,3 +1,207 @@
 <resources>
     <string name="app_name">Game Vault</string>
+
+    <!-- Deals Screen -->
+    <string name="deals_tab">Deals 🥝</string>
+    <string name="giveaways_tab">Giveaways 🎉</string>
+    <string name="search_for_deals">Search for deals</string>
+    <string name="search_results">Found %d Search results !</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="loading_deals">Loading Deals</string>
+    <string name="loading_giveaways">Loading Giveaways</string>
+
+    <!-- Filtering Options -->
+    <string name="filtering_options">Filtering options</string>
+    <string name="sort_by">Sort by: </string>
+    <string name="descending">Descending</string>
+    <string name="store">Store: </string>
+    <string name="price">Price: </string>
+    <string name="on_sale_games">On Sale Games :</string>
+    <string name="apply_filters">Apply Filters</string>
+    <string name="type">Type: </string>
+    <string name="platform">Platform: </string>
+
+    <!-- Sort Options -->
+    <string name="sort_deal_rating">DealRating</string>
+    <string name="sort_title">Title</string>
+    <string name="sort_savings">Savings</string>
+    <string name="sort_price">Price</string>
+    <string name="sort_metacritic">Metacritic</string>
+    <string name="sort_reviews">Reviews</string>
+    <string name="sort_release">Release</string>
+    <string name="sort_store">Store</string>
+    <string name="sort_recent">Recent</string>
+
+    <!-- Stores -->
+    <string name="store_steam">Steam</string>
+    <string name="store_gamersgate">GamersGate</string>
+    <string name="store_greenmangaming">GreenManGaming</string>
+    <string name="store_amazon">Amazon</string>
+    <string name="store_gamestop">GameStop</string>
+    <string name="store_direct2drive">Direct2Drive</string>
+    <string name="store_gog">GOG</string>
+    <string name="store_origin">Origin</string>
+    <string name="store_get_games">Get Games</string>
+    <string name="store_shiny_loot">Shiny Loot</string>
+    <string name="store_humble">Humble Store</string>
+    <string name="store_desura">Desura</string>
+    <string name="store_uplay">Uplay</string>
+    <string name="store_indie_gamestand">IndieGameStand</string>
+    <string name="store_fanatical">Fanatical</string>
+    <string name="store_gamesrocket">Gamesrocket</string>
+    <string name="store_games_republic">Games Republic</string>
+    <string name="store_sila_games">SilaGames</string>
+    <string name="store_playfield">Playfield</string>
+    <string name="store_imperial_games">ImperialGames</string>
+    <string name="store_wingamestore">WinGameStore</string>
+    <string name="store_funstockdigital">FunStockDigital</string>
+    <string name="store_gamebillet">GameBillet</string>
+    <string name="store_voidu">Voidu</string>
+    <string name="store_epic_games">Epic Games Store</string>
+    <string name="store_razer">Razer Game Store</string>
+    <string name="store_gamesplanet">Gamesplanet</string>
+    <string name="store_gamesload">Gamesload</string>
+    <string name="store_2game">2Game</string>
+    <string name="store_indiegal">IndieGala</string>
+    <string name="store_blizzard">Blizzard Shop</string>
+    <string name="store_allyouplay">AllYouPlay</string>
+    <string name="store_dlgamer">DLGamer</string>
+    <string name="store_noctre">Noctre</string>
+    <string name="store_dreamgame">DreamGame</string>
+
+    <!-- Giveaways Sort Options -->
+    <string name="sort_date">date</string>
+    <string name="sort_value">value</string>
+    <string name="sort_popularity">popularity</string>
+
+    <!-- Giveaways Type -->
+    <string name="type_game">game</string>
+    <string name="type_loot">loot</string>
+    <string name="type_beta">beta</string>
+
+    <!-- Platforms -->
+    <string name="platform_pc">pc</string>
+    <string name="platform_steam">steam</string>
+    <string name="platform_epic">epic-games-store</string>
+    <string name="platform_ubisoft">ubisoft</string>
+    <string name="platform_gog">gog</string>
+    <string name="platform_itchio">itchio</string>
+    <string name="platform_ps4">ps4</string>
+    <string name="platform_ps5">ps5</string>
+    <string name="platform_xbox_one">xbox-one</string>
+    <string name="platform_xbox_series">xbox-series-xs</string>
+    <string name="platform_switch">switch</string>
+    <string name="platform_android">android</string>
+    <string name="platform_ios">ios</string>
+    <string name="platform_vr">vr</string>
+    <string name="platform_battlenet">battlenet</string>
+    <string name="platform_origin">origin</string>
+    <string name="platform_drm_free">drm-free</string>
+    <string name="platform_xbox_360">xbox-360</string>
+
+    <!-- Content Descriptions -->
+    <string name="icon_favorite">Favorite</string>
+    <string name="icon_close">Close</string>
+    <string name="icon_done">Done icon</string>
+    <string name="icon_history">history</string>
+    <string name="icon_read_more">Read more</string>
+    <string name="price_range_format">%.2f .. %.2f</string>
+
+    <!-- Game Details Screen -->
+    <string name="get_game">Get</string>
+    <string name="minimum_system_requirements">Minimum System Requirements:</string>
+    <string name="about_the_game">About the game:</string>
+    <string name="platform_label">Platform:</string>
+    <string name="genre_label">Genre:</string>
+    <string name="developer_label">Developer:</string>
+    <string name="release_date_label">Release Date:</string>
+    <string name="screenshots_label">Screenshots:</string>
+    <string name="os_label">OS:</string>
+    <string name="processor_label">Processor:</string>
+    <string name="memory_label">Memory:</string>
+    <string name="graphics_label">Graphics:</string>
+    <string name="storage_label">Storage:</string>
+
+    <!-- Free Games Screen -->
+    <string name="loading">Loading...</string>
+    <string name="search_with_filters">Search With Applied Filters</string>
+    <string name="category_label">Category</string>
+    <string name="select_category">Select Category</string>
+    <string name="free_games_filter_platform">Platform: </string>
+
+    <!-- Free Games Sort Options -->
+    <string name="free_games_sort_release_date">release-date</string>
+    <string name="free_games_sort_popularity">popularity</string>
+    <string name="free_games_sort_alphabetical">alphabetical</string>
+    <string name="free_games_sort_relevance">relevance</string>
+
+    <!-- Free Games Platform Options -->
+    <string name="free_games_platform_pc">pc</string>
+    <string name="free_games_platform_browser">browser</string>
+    <string name="free_games_platform_all">all</string>
+
+    <!-- Game Genres -->
+    <string name="genre_mmorpg">mmorpg</string>
+    <string name="genre_shooter">shooter</string>
+    <string name="genre_strategy">strategy</string>
+    <string name="genre_moba">moba</string>
+    <string name="genre_racing">racing</string>
+    <string name="genre_sports">sports</string>
+    <string name="genre_social">social</string>
+    <string name="genre_sandbox">sandbox</string>
+    <string name="genre_open_world">open-world</string>
+    <string name="genre_survival">survival</string>
+    <string name="genre_pvp">pvp</string>
+    <string name="genre_pve">pve</string>
+    <string name="genre_pixel">pixel</string>
+    <string name="genre_voxel">voxel</string>
+    <string name="genre_zombie">zombie</string>
+    <string name="genre_turn_based">turn-based</string>
+    <string name="genre_first_person">first-person</string>
+    <string name="genre_third_person">third-person</string>
+    <string name="genre_top_down">top-down</string>
+    <string name="genre_tank">tank</string>
+    <string name="genre_space">space</string>
+    <string name="genre_sailing">sailing</string>
+    <string name="genre_side_scroller">side-scroller</string>
+    <string name="genre_superhero">superhero</string>
+    <string name="genre_permadeath">permadeath</string>
+    <string name="genre_card">card</string>
+    <string name="genre_battle_royale">battle-royale</string>
+    <string name="genre_mmo">mmo</string>
+    <string name="genre_mmofps">mmofps</string>
+    <string name="genre_mmotps">mmotps</string>
+    <string name="genre_3d">3d</string>
+    <string name="genre_2d">2d</string>
+    <string name="genre_anime">anime</string>
+    <string name="genre_fantasy">fantasy</string>
+    <string name="genre_sci_fi">sci-fi</string>
+    <string name="genre_fighting">fighting</string>
+    <string name="genre_action_rpg">action-rpg</string>
+    <string name="genre_action">action</string>
+    <string name="genre_military">military</string>
+    <string name="genre_martial_arts">martial-arts</string>
+    <string name="genre_flight">flight</string>
+    <string name="genre_low_spec">low-spec</string>
+    <string name="genre_tower_defense">tower-defense</string>
+    <string name="genre_horror">horror</string>
+    <string name="genre_mmorts">mmorts</string>
+
+    <!-- Settings Screen -->
+    <string name="app_settings">App Settings</string>
+    <string name="theme_label">Theme :</string>
+    <string name="theme_light">Light ☀️</string>
+    <string name="theme_dark">Dark 🌘</string>
+    <string name="theme_system">System 🤖</string>
+    <string name="dynamic_colors_label">Dynamic Colors</string>
+    <string name="clear_search_history_label">Clear Search History 🧹</string>
+    <string name="clear_button">Clear</string>
+    <string name="search_history_limit_label">Search History Limit :</string>
+    <string name="decrease_button">-</string>
+    <string name="increase_button">+</string>
+
+    <!-- Navigation -->
+    <string name="nav_free_games">Free</string>
+    <string name="nav_deals">Deals</string>
+    <string name="nav_settings">Settings</string>
 </resources>
