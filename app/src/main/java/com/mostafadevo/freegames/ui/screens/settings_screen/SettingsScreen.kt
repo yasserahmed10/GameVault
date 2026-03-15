@@ -28,11 +28,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.mostafadevo.freegames.R
 import com.mostafadevo.freegames.domain.model.ThemePreference
 
 @Composable
@@ -48,7 +50,7 @@ fun SettingsScreen(
             .padding(8.dp)
     ) {
         Text(
-            text = "App Settings",
+            text = stringResource(R.string.app_settings),
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(8.dp)
         )
@@ -103,7 +105,7 @@ fun SearchHistoryLimitCounter(limit: Int, onLimitChange: (Int) -> Unit) {
             modifier = Modifier.padding(8.dp).fillMaxWidth()
         ) {
             Text(
-                "Search History Limit :",
+                stringResource(R.string.search_history_limit_label),
                 modifier = Modifier.padding(8.dp)
             )
             IconButton(
@@ -111,7 +113,7 @@ fun SearchHistoryLimitCounter(limit: Int, onLimitChange: (Int) -> Unit) {
                     onLimitChange(limit - 1)
                 }
             ) {
-                Text("-")
+                Text(stringResource(R.string.decrease_button))
             }
             AnimatedContent(
                 targetState = limit,
@@ -134,7 +136,7 @@ fun SearchHistoryLimitCounter(limit: Int, onLimitChange: (Int) -> Unit) {
                     onLimitChange(limit + 1)
                 }
             ) {
-                Text("+")
+                Text(stringResource(R.string.increase_button))
             }
         }
     }
@@ -163,12 +165,12 @@ fun ClearSearchHistoryButton(onClick: () -> Unit = {}) {
             modifier = Modifier.padding(8.dp)
         ) {
             Text(
-                "Clear Search History \uD83E\uDDF9",
+                stringResource(R.string.clear_search_history_label),
                 modifier = Modifier.padding(8.dp)
             )
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                "Clear",
+                stringResource(R.string.clear_button),
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier
                     .padding(8.dp)
@@ -195,27 +197,27 @@ fun ThemeSwitcherWithDialog(
             .fillMaxWidth()
     ) {
         Text(
-            "Theme :",
+            stringResource(R.string.theme_label),
             style = MaterialTheme.typography.titleMedium,
             modifier = Modifier.padding(8.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
         LabeledRadioButton(
-            label = "Light ☀️",
+            label = stringResource(R.string.theme_light),
             selected = themePreference.ordinal == ThemePreference.LIGHT.ordinal,
             onClick = {
                 onLightClick()
             }
         )
         LabeledRadioButton(
-            label = "Dark 🌘",
+            label = stringResource(R.string.theme_dark),
             selected = themePreference.ordinal == ThemePreference.DARK.ordinal,
             onClick = {
                 onDarkClick()
             }
         )
         LabeledRadioButton(
-            label = "System 🤖",
+            label = stringResource(R.string.theme_system),
             selected = themePreference.ordinal == ThemePreference.SYSTEM.ordinal,
             onClick = {
                 onSystemClick()
@@ -257,7 +259,7 @@ fun DynamicColorsSwitcher(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                "Dynamic Colors"
+                stringResource(R.string.dynamic_colors_label)
             )
             Spacer(modifier = Modifier.weight(1f))
             Switch(
