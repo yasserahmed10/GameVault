@@ -64,6 +64,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -74,6 +75,7 @@ import com.mostafadevo.freegames.ui.components.GiveawayListItem
 import com.mostafadevo.freegames.ui.components.History
 import com.mostafadevo.freegames.ui.components.ShimmeringText
 import com.mostafadevo.freegames.utils.openUrl
+import com.mostafadevo.freegames.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(
@@ -87,7 +89,10 @@ fun DealsScreen(
 ) {
     val state = viewModel.dealsAndGiveawayScreenUiState.collectAsStateWithLifecycle().value
     val snackbarHostState = remember { SnackbarHostState() }
-    val options = listOf("Deals \uD83E\uDD1D", "Giveaways \uD83C\uDF89")
+    val options = listOf(
+        stringResource(R.string.deals_tab),
+        stringResource(R.string.giveaways_tab)
+    )
     val context = LocalContext.current
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
@@ -194,7 +199,7 @@ fun DealsScreen(
                 SearchBar(
                     placeholder = {
                         Text(
-                            text = "Search for deals",
+                            text = stringResource(R.string.search_for_deals),
                             style = MaterialTheme.typography.bodySmall.copy(fontSize = 14.sp)
                         )
                     },
@@ -218,7 +223,7 @@ fun DealsScreen(
                     }, leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Search,
-                            contentDescription = "Favorite"
+                            contentDescription = stringResource(R.string.icon_favorite)
                         )
                     }, trailingIcon = {
                         if (state.isDealsSearchBarActive) {
@@ -239,7 +244,7 @@ fun DealsScreen(
                             }) {
                                 Icon(
                                     imageVector = Icons.Default.Close,
-                                    contentDescription = "Close"
+                                    contentDescription = stringResource(R.string.icon_close)
                                 )
                             }
                         }
@@ -257,7 +262,7 @@ fun DealsScreen(
                             verticalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             Text(
-                                text = "Recent Searches",
+                                text = stringResource(R.string.recent_searches),
                                 style = MaterialTheme.typography.bodySmall
                             )
                             state.dealsSearchHistory?.forEach { deal ->
@@ -275,7 +280,7 @@ fun DealsScreen(
                                 ) {
                                     Icon(
                                         imageVector = History,
-                                        contentDescription = "history"
+                                        contentDescription = stringResource(R.string.icon_history)
                                     )
                                     Spacer(Modifier.width(8.dp))
                                     Text(
@@ -299,7 +304,7 @@ fun DealsScreen(
                             if (state.dealsSearchBardata.isNotEmpty()) {
                                 item {
                                     Text(
-                                        text = "Found ${state.dealsSearchBardata.size} Search results !",
+                                        text = stringResource(R.string.search_results, state.dealsSearchBardata.size),
                                         style = MaterialTheme.typography.bodySmall,
                                         modifier = Modifier
                                             .padding(8.dp)
@@ -334,7 +339,7 @@ fun DealsScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         ShimmeringText(
-                            text = "Loading Deals",
+                            text = stringResource(R.string.loading_deals),
                             shimmerColor = MaterialTheme.colorScheme.primary
                         )
                     }
@@ -375,7 +380,7 @@ fun DealsScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     ShimmeringText(
-                        text = "Loading Giveaways",
+                        text = stringResource(R.string.loading_giveaways),
                         shimmerColor = MaterialTheme.colorScheme.primary
                     )
                 }
@@ -402,15 +407,15 @@ fun DealsScreen(
         }
         if (state.isBottomSheetVisible) {
             val listOfSortByOptions = listOf(
-                "DealRating",
-                "Title",
-                "Savings",
-                "Price",
-                "Metacritic",
-                "Reviews",
-                "Release",
-                "Store",
-                "Recent"
+                stringResource(R.string.sort_deal_rating),
+                stringResource(R.string.sort_title),
+                stringResource(R.string.sort_savings),
+                stringResource(R.string.sort_price),
+                stringResource(R.string.sort_metacritic),
+                stringResource(R.string.sort_reviews),
+                stringResource(R.string.sort_release),
+                stringResource(R.string.sort_store),
+                stringResource(R.string.sort_recent)
             )
             ModalBottomSheet(
                 onDismissRequest = {
@@ -424,7 +429,7 @@ fun DealsScreen(
                         .verticalScroll(rememberScrollState())
                 ) {
                     Text(
-                        text = "Filtering options",
+                        text = stringResource(R.string.filtering_options),
                         style = MaterialTheme.typography.titleLarge,
                         fontSize = 16.sp,
                         modifier = Modifier
@@ -441,7 +446,7 @@ fun DealsScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "Sort by: ",
+                            text = stringResource(R.string.sort_by),
                             style = MaterialTheme.typography.titleSmall,
                             fontSize = 14.sp,
                             modifier = Modifier
@@ -450,7 +455,7 @@ fun DealsScreen(
                         )
 
                         Spacer(modifier = Modifier.weight(1f))
-                        Text("Descending", modifier = Modifier.padding(end = 8.dp))
+                        Text(stringResource(R.string.descending), modifier = Modifier.padding(end = 8.dp))
                         Switch(
                             state.filterDesc ?: false,
                             onCheckedChange = {
@@ -494,7 +499,7 @@ fun DealsScreen(
                                     {
                                         Icon(
                                             imageVector = Icons.Filled.Done,
-                                            contentDescription = "Done icon",
+                                            contentDescription = stringResource(R.string.icon_done),
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
@@ -513,44 +518,44 @@ fun DealsScreen(
                     )
 
                     val store = listOf(
-                        1 to "Steam",
-                        2 to "GamersGate",
-                        3 to "GreenManGaming",
-                        4 to "Amazon",
-                        5 to "GameStop",
-                        6 to "Direct2Drive",
-                        7 to "GOG",
-                        8 to "Origin",
-                        9 to "Get Games",
-                        10 to "Shiny Loot",
-                        11 to "Humble Store",
-                        12 to "Desura",
-                        13 to "Uplay",
-                        14 to "IndieGameStand",
-                        15 to "Fanatical",
-                        16 to "Gamesrocket",
-                        17 to "Games Republic",
-                        18 to "SilaGames",
-                        19 to "Playfield",
-                        20 to "ImperialGames",
-                        21 to "WinGameStore",
-                        22 to "FunStockDigital",
-                        23 to "GameBillet",
-                        24 to "Voidu",
-                        25 to "Epic Games Store",
-                        26 to "Razer Game Store",
-                        27 to "Gamesplanet",
-                        28 to "Gamesload",
-                        29 to "2Game",
-                        30 to "IndieGala",
-                        31 to "Blizzard Shop",
-                        32 to "AllYouPlay",
-                        33 to "DLGamer",
-                        34 to "Noctre",
-                        35 to "DreamGame"
+                        1 to stringResource(R.string.store_steam),
+                        2 to stringResource(R.string.store_gamersgate),
+                        3 to stringResource(R.string.store_greenmangaming),
+                        4 to stringResource(R.string.store_amazon),
+                        5 to stringResource(R.string.store_gamestop),
+                        6 to stringResource(R.string.store_direct2drive),
+                        7 to stringResource(R.string.store_gog),
+                        8 to stringResource(R.string.store_origin),
+                        9 to stringResource(R.string.store_get_games),
+                        10 to stringResource(R.string.store_shiny_loot),
+                        11 to stringResource(R.string.store_humble),
+                        12 to stringResource(R.string.store_desura),
+                        13 to stringResource(R.string.store_uplay),
+                        14 to stringResource(R.string.store_indie_gamestand),
+                        15 to stringResource(R.string.store_fanatical),
+                        16 to stringResource(R.string.store_gamesrocket),
+                        17 to stringResource(R.string.store_games_republic),
+                        18 to stringResource(R.string.store_sila_games),
+                        19 to stringResource(R.string.store_playfield),
+                        20 to stringResource(R.string.store_imperial_games),
+                        21 to stringResource(R.string.store_wingamestore),
+                        22 to stringResource(R.string.store_funstockdigital),
+                        23 to stringResource(R.string.store_gamebillet),
+                        24 to stringResource(R.string.store_voidu),
+                        25 to stringResource(R.string.store_epic_games),
+                        26 to stringResource(R.string.store_razer),
+                        27 to stringResource(R.string.store_gamesplanet),
+                        28 to stringResource(R.string.store_gamesload),
+                        29 to stringResource(R.string.store_2game),
+                        30 to stringResource(R.string.store_indiegal),
+                        31 to stringResource(R.string.store_blizzard),
+                        32 to stringResource(R.string.store_allyouplay),
+                        33 to stringResource(R.string.store_dlgamer),
+                        34 to stringResource(R.string.store_noctre),
+                        35 to stringResource(R.string.store_dreamgame)
                     )
                     Text(
-                        text = "Store: ",
+                        text = stringResource(R.string.store),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -587,7 +592,7 @@ fun DealsScreen(
                                     {
                                         Icon(
                                             imageVector = Icons.Filled.Done,
-                                            contentDescription = "Done icon",
+                                            contentDescription = stringResource(R.string.icon_done),
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
@@ -605,7 +610,7 @@ fun DealsScreen(
                         )
                     )
                     Text(
-                        text = "Price: ",
+                        text = stringResource(R.string.price),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -649,7 +654,7 @@ fun DealsScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "On Sale Games :",
+                            text = stringResource(R.string.on_sale_games),
                             style = MaterialTheme.typography.titleSmall,
                             fontSize = 14.sp,
                             modifier = Modifier.padding(start = 8.dp)
@@ -679,7 +684,7 @@ fun DealsScreen(
                             .padding(8.dp)
                     ) {
                         Text(
-                            text = "Apply Filters"
+                            text = stringResource(R.string.apply_filters)
                         )
                     }
                 }
@@ -697,35 +702,34 @@ fun DealsScreen(
                 sheetState = sheetStateGiveaways
             ) {
                 val giveawaysPlatform = listOf(
-                    "pc",
-                    "steam",
-                    "epic-games-store",
-                    "ubisoft",
-                    "gog",
-                    "itchio",
-                    "ps4",
-                    "ps5",
-                    "xbox-one",
-                    "xbox-series-xs",
-                    "switch",
-                    "android",
-                    "ios",
-                    "vr",
-                    "battlenet",
-                    "origin",
-                    "drm-free",
-                    "xbox-360"
-
+                    stringResource(R.string.platform_pc),
+                    stringResource(R.string.platform_steam),
+                    stringResource(R.string.platform_epic),
+                    stringResource(R.string.platform_ubisoft),
+                    stringResource(R.string.platform_gog),
+                    stringResource(R.string.platform_itchio),
+                    stringResource(R.string.platform_ps4),
+                    stringResource(R.string.platform_ps5),
+                    stringResource(R.string.platform_xbox_one),
+                    stringResource(R.string.platform_xbox_series),
+                    stringResource(R.string.platform_switch),
+                    stringResource(R.string.platform_android),
+                    stringResource(R.string.platform_ios),
+                    stringResource(R.string.platform_vr),
+                    stringResource(R.string.platform_battlenet),
+                    stringResource(R.string.platform_origin),
+                    stringResource(R.string.platform_drm_free),
+                    stringResource(R.string.platform_xbox_360)
                 )
                 val giveawaysSortOptions = listOf(
-                    "date",
-                    "value",
-                    "popularity"
+                    stringResource(R.string.sort_date),
+                    stringResource(R.string.sort_value),
+                    stringResource(R.string.sort_popularity)
                 )
                 val giveawaysType = listOf(
-                    "game",
-                    "loot",
-                    "beta"
+                    stringResource(R.string.type_game),
+                    stringResource(R.string.type_loot),
+                    stringResource(R.string.type_beta)
                 )
 
                 Column(
@@ -734,7 +738,7 @@ fun DealsScreen(
                         .verticalScroll(rememberScrollState())
                 ) {
                     Text(
-                        text = "Filtering options",
+                        text = stringResource(R.string.filtering_options),
                         style = MaterialTheme.typography.titleLarge,
                         fontSize = 16.sp,
                         modifier = Modifier
@@ -749,7 +753,7 @@ fun DealsScreen(
                     )
 
                     Text(
-                        text = "Sort by: ",
+                        text = stringResource(R.string.sort_by),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier
@@ -788,7 +792,7 @@ fun DealsScreen(
                                     {
                                         Icon(
                                             imageVector = Icons.Filled.Done,
-                                            contentDescription = "Done icon",
+                                            contentDescription = stringResource(R.string.icon_done),
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
@@ -807,7 +811,7 @@ fun DealsScreen(
                     )
 
                     Text(
-                        text = "Type: ",
+                        text = stringResource(R.string.type),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -844,7 +848,7 @@ fun DealsScreen(
                                     {
                                         Icon(
                                             imageVector = Icons.Filled.Done,
-                                            contentDescription = "Done icon",
+                                            contentDescription = stringResource(R.string.icon_done),
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
@@ -861,7 +865,7 @@ fun DealsScreen(
                         )
                     )
                     Text(
-                        text = "Platform: ",
+                        text = stringResource(R.string.platform),
                         style = MaterialTheme.typography.titleSmall,
                         fontSize = 14.sp,
                         modifier = Modifier.padding(start = 8.dp)
@@ -899,7 +903,7 @@ fun DealsScreen(
                                     {
                                         Icon(
                                             imageVector = Icons.Filled.Done,
-                                            contentDescription = "Done icon",
+                                            contentDescription = stringResource(R.string.icon_done),
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
@@ -927,7 +931,7 @@ fun DealsScreen(
                             .padding(8.dp)
                     ) {
                         Text(
-                            text = "Apply Filters"
+                            text = stringResource(R.string.apply_filters)
                         )
                     }
                 }
