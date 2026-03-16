@@ -76,6 +76,7 @@ import com.mostafadevo.freegames.ui.components.History
 import com.mostafadevo.freegames.ui.components.ShimmeringText
 import com.mostafadevo.freegames.utils.openUrl
 import com.mostafadevo.freegames.R
+import java.util.Locale
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(
@@ -327,7 +328,7 @@ fun DealsScreen(
                                     string1 = deal.title,
                                     string2 = deal.salePrice + "$",
                                     string3LineThrough = "${deal.normalPrice}$",
-                                    string4 = "${deal.savings}% off"
+                                    string4 = "${String.format(Locale.US, "%.2f", deal.savings.toFloatOrNull() ?: 0f)}% off"
                                 )
                             }
                         }
@@ -360,7 +361,7 @@ fun DealsScreen(
                             string1 = deal.title,
                             string2 = deal.salePrice + "$",
                             string3LineThrough = "${deal.normalPrice}$",
-                            string4 = "${deal.savings}% off"
+                            string4 = "${String.format(Locale.US, "%.2f", deal.savings.toFloatOrNull() ?: 0f)}% off"
                         )
                     }
                 }
