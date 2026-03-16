@@ -116,7 +116,7 @@ fun SearchHistoryLimitCounter(limit: Int, onLimitChange: (Int) -> Unit) {
             )
             IconButton(
                 onClick = {
-                    onLimitChange(limit - 1)
+                    onLimitChange((limit - 1).coerceAtLeast(0))
                 }
             ) {
                 Text(stringResource(R.string.decrease_button))

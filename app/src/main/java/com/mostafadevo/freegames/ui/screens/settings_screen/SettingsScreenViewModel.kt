@@ -54,7 +54,7 @@ when (event) {
             SettingsScreenEvent.ClearSearchHistory -> clearSearchHistory()
             is SettingsScreenEvent.ChangeSearchHistoryLimit -> {
                 viewModelScope.launch(Dispatchers.IO) {
-                    dataStoreRepository.setSearchHistoryLimit(event.limit)
+                    dataStoreRepository.setSearchHistoryLimit(event.limit.coerceAtLeast(0))
                 }
             }
 

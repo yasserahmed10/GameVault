@@ -66,7 +66,7 @@ class DataStoreRepositoryImpl @Inject constructor(
 
     override suspend fun setSearchHistoryLimit(limit: Int) {
         dataStore.edit { prefs ->
-            prefs[intPreferencesKey("search_history_limit_key")] = limit
+            prefs[intPreferencesKey("search_history_limit_key")] = limit.coerceAtLeast(0)
         }
     }
 
@@ -79,7 +79,7 @@ class DataStoreRepositoryImpl @Inject constructor(
                 throw exception
             }
         }.map { preferences ->
-            preferences[intPreferencesKey("search_history_limit_key")] ?: 5
+            (preferences[intPreferencesKey("search_history_limit_key")] ?: 5).coerceAtLeast(0)
         }
     }
 
