@@ -115,4 +115,23 @@ class DataStoreRepositoryImpl @Inject constructor(
             preferences[booleanPreferencesKey("dynamic_theme_preference_key")] = dynamicTheme
         }
     }
+
+    override suspend fun saveLanguagePreference(languageCode: String) {
+        dataStore.edit { preferences ->
+            preferences[stringPreferencesKey("language_key")] = languageCode
+        }
+    }
+
+    override fun getLanguagePreference(): Flow<String> {
+        return dataStore.data.catch { exception ->
+            if (exception is Exception) {
+                Timber.e(exception)
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }.map { preferences ->
+            preferences[stringPreferencesKey("language_key")] ?: "en"
+        }
+    }
 }

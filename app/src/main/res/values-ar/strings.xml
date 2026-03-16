@@ -198,6 +198,9 @@
     <string name="clear_search_history_label">مسح سجل البحث 🧹</string>
     <string name="clear_button">مسح</string>
     <string name="search_history_limit_label">حد سجل البحث :</string>
+    <string name="language_label">اللغة</string>
+    <string name="language_switch_to_arabic">التبديل إلى العربية</string>
+    <string name="language_switch_to_english">التبديل إلى الإنجليزية</string>
     <string name="decrease_button">−</string>
     <string name="increase_button">+</string>
 

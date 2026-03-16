@@ -31,8 +31,14 @@ class SettingsScreenViewModel @Inject constructor(
         started = SharingStarted.WhileSubscribed(),
         initialValue = 5
     )
+    val languageState: StateFlow<String> = dataStoreRepository.getLanguagePreference().stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(),
+        initialValue = "en"
+    )
+
     fun onEvent(event: SettingsScreenEvent) {
-        when (event) {
+when (event) {
             is SettingsScreenEvent.SaveThemePreference -> {
                 viewModelScope.launch(Dispatchers.IO) {
                     saveThemePreference(event.themePreference)
@@ -49,6 +55,12 @@ class SettingsScreenViewModel @Inject constructor(
             is SettingsScreenEvent.ChangeSearchHistoryLimit -> {
                 viewModelScope.launch(Dispatchers.IO) {
                     dataStoreRepository.setSearchHistoryLimit(event.limit)
+                }
+            }
+
+            is SettingsScreenEvent.SaveLanguagePreference -> {
+                viewModelScope.launch(Dispatchers.IO) {
+                    dataStoreRepository.saveLanguagePreference(event.languageCode)
                 }
             }
         }

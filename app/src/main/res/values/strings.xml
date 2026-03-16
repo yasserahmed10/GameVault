@@ -197,6 +197,9 @@
     <string name="clear_search_history_label">Clear Search History 🧹</string>
     <string name="clear_button">Clear</string>
     <string name="search_history_limit_label">Search History Limit :</string>
+    <string name="language_label">Language</string>
+    <string name="language_switch_to_arabic">Switch to Arabic</string>
+    <string name="language_switch_to_english">Switch to English</string>
     <string name="decrease_button">-</string>
     <string name="increase_button">+</string>
 

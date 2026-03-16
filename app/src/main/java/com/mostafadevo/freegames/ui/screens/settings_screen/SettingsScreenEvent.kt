@@ -7,4 +7,5 @@ sealed class SettingsScreenEvent {
     data class SaveDynamicThemePreference(val dynamicTheme: Boolean) : SettingsScreenEvent()
     data object ClearSearchHistory : SettingsScreenEvent()
     data class ChangeSearchHistoryLimit(val limit: Int) : SettingsScreenEvent()
+    data class SaveLanguagePreference(val languageCode: String) : SettingsScreenEvent()
 }

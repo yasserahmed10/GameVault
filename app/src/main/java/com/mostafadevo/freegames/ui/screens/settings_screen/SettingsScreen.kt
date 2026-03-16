@@ -5,7 +5,6 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
-import androidx.compose.animation.with
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,8 +22,6 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -44,6 +41,7 @@ fun SettingsScreen(
     val themePreference = viewModel.themeState.collectAsStateWithLifecycle()
     val dynamicTheme = viewModel.dynamicThemeState.collectAsStateWithLifecycle()
     val searchHistoryLimit = viewModel.searchHistoryLimitState.collectAsStateWithLifecycle()
+    val languagePreference = viewModel.languageState.collectAsStateWithLifecycle()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -73,6 +71,14 @@ fun SettingsScreen(
                 viewModel.onEvent(
                     SettingsScreenEvent.SaveDynamicThemePreference(!dynamicTheme.value)
                 )
+            }
+        )
+        Spacer(modifier = Modifier.padding(8.dp))
+        LanguageSwitcherButton(
+            isArabic = languagePreference.value == "ar",
+            onClick = {
+                val newLanguage = if (languagePreference.value == "ar") "en" else "ar"
+                viewModel.onEvent(SettingsScreenEvent.SaveLanguagePreference(newLanguage))
             }
         )
         Spacer(modifier = Modifier.padding(8.dp))
@@ -267,6 +273,42 @@ fun DynamicColorsSwitcher(
                 onCheckedChange = {
                     onClick()
                 }
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun LanguageSwitcherButton(
+    isArabic: Boolean = false,
+    onClick: () -> Unit = {}
+) {
+    Card(
+        modifier = Modifier
+            .clip(RoundedCornerShape(8.dp))
+            .fillMaxWidth()
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(stringResource(R.string.language_label))
+            Spacer(modifier = Modifier.weight(1f))
+            Text(
+                text = if (isArabic) {
+                    stringResource(R.string.language_switch_to_english)
+                } else {
+                    stringResource(R.string.language_switch_to_arabic)
+                },
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .clickable { onClick() },
+                color = MaterialTheme.colorScheme.primary
             )
         }
     }

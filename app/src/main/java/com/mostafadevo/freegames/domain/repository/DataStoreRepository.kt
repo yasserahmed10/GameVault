@@ -13,4 +13,6 @@ interface DataStoreRepository {
     suspend fun clearSearchHistory()
     suspend fun setSearchHistoryLimit(limit: Int)
     fun getSearchHistoryLimit(): Flow<Int>
+    suspend fun saveLanguagePreference(languageCode: String)
+    fun getLanguagePreference(): Flow<String>
 }
