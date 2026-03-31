@@ -16,7 +16,7 @@ plugins {
 val properties = Properties()
 val versionMajor = 1
 val versionMinor = 0
-val versionPatch = 2
+val versionPatch = 3
 val versionBuild = 0 // bump for dogfood builds, public betas, etc.
 val isBeta = true
 
